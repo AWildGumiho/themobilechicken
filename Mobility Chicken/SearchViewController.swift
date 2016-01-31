@@ -1,5 +1,5 @@
 //
-//  SearchRoutinesViewController.swift
+//  SearchViewController.swift
 //  Mobility Chicken
 //
 //  Created by Chelsea Green on 1/29/16.
@@ -8,28 +8,56 @@
 
 import UIKit
 
-class SearchRoutinesViewController: UIViewController {
+class SearchViewController: NavViewController {
+    
+    //var searchLabel = UILabel
+    var imageButton = LoginPageButton(frame: CGRectMake(75, 200, 120, 120))
+    var textButton = LoginPageButton(frame: CGRectMake((UIScreen.mainScreen().bounds.width)-195, 200, 120, 120))
+    var exerciseButton = LoginPageButton(frame: CGRectMake(75, 340, 120, 120))
+    var allButton = LoginPageButton(frame: CGRectMake((UIScreen.mainScreen().bounds.width)-195, 340, 120, 120))
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        imageButton.addTarget(self, action: "imagePressed", forControlEvents: UIControlEvents.TouchUpInside)
+        imageButton.setTitle("Basic", forState: .Normal)
+        self.view.addSubview(imageButton)
+        
+        textButton.addTarget(self, action: "textPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        textButton.setTitle("Text", forState: .Normal)
+        self.view.addSubview(textButton)
+        
+        exerciseButton.addTarget(self, action: "exercisePressed", forControlEvents: UIControlEvents.TouchUpInside)
+        exerciseButton.setTitle("Exercise", forState: .Normal)
+        self.view.addSubview(exerciseButton)
+        
+        allButton.addTarget(self, action: "allPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        allButton.setTitle("All", forState: .Normal)
+        self.view.addSubview(allButton)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func imagePressed() {
+    
     }
-    */
+    
+    func textPressed() {
+        
+    }
+    
+    func exercisePressed() {
+        
+    }
+    
+    func allPressed() {
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
 
 }

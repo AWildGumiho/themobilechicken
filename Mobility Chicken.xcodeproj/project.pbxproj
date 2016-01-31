@@ -8,12 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		693B837E1C48D5640024F7EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B837D1C48D5640024F7EC /* AppDelegate.swift */; };
-		693B83801C48D5640024F7EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B837F1C48D5640024F7EC /* ViewController.swift */; };
+		693B83801C48D5640024F7EC /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B837F1C48D5640024F7EC /* LoginViewController.swift */; };
 		693B83831C48D5640024F7EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 693B83811C48D5640024F7EC /* Main.storyboard */; };
 		693B83851C48D5640024F7EC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 693B83841C48D5640024F7EC /* Assets.xcassets */; };
 		693B83881C48D5640024F7EC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 693B83861C48D5640024F7EC /* LaunchScreen.storyboard */; };
 		693B83931C48D5640024F7EC /* Mobility_ChickenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B83921C48D5640024F7EC /* Mobility_ChickenTests.swift */; };
 		693B839E1C48D5640024F7EC /* Mobility_ChickenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B839D1C48D5640024F7EC /* Mobility_ChickenUITests.swift */; };
+		69CB8E3B1C5B2884007395B8 /* LoginPageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB8E3A1C5B2884007395B8 /* LoginPageButton.swift */; };
+		69CB8E3D1C5B53B2007395B8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB8E3C1C5B53B2007395B8 /* HomeViewController.swift */; };
+		69CB8E411C5B5755007395B8 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB8E401C5B5755007395B8 /* LoginTextField.swift */; };
+		69CB8E431C5B5C5C007395B8 /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB8E421C5B5C5C007395B8 /* SignUpViewController.swift */; };
+		69CB8E451C5B69A3007395B8 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB8E441C5B69A3007395B8 /* SearchViewController.swift */; };
+		69CB8E471C5CACEE007395B8 /* NavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB8E461C5CACEE007395B8 /* NavViewController.swift */; };
+		69CB8E491C5CB1B2007395B8 /* SavedRoutinesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB8E481C5CB1B2007395B8 /* SavedRoutinesViewController.swift */; };
+		69CB8E4C1C5D6EE1007395B8 /* settings-256.png in Resources */ = {isa = PBXBuildFile; fileRef = 69CB8E4B1C5D6EE1007395B8 /* settings-256.png */; };
+		69CB8E4E1C5D7523007395B8 /* back.png in Resources */ = {isa = PBXBuildFile; fileRef = 69CB8E4D1C5D7523007395B8 /* back.png */; };
+		69CB8E501C5D78DB007395B8 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB8E4F1C5D78DB007395B8 /* SettingsViewController.swift */; };
+		69CB8E521C5E0007007395B8 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB8E511C5E0007007395B8 /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +47,7 @@
 /* Begin PBXFileReference section */
 		693B837A1C48D5640024F7EC /* Mobility Chicken.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mobility Chicken.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		693B837D1C48D5640024F7EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		693B837F1C48D5640024F7EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		693B837F1C48D5640024F7EC /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		693B83821C48D5640024F7EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		693B83841C48D5640024F7EC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		693B83871C48D5640024F7EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +58,17 @@
 		693B83991C48D5640024F7EC /* Mobility ChickenUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Mobility ChickenUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		693B839D1C48D5640024F7EC /* Mobility_ChickenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobility_ChickenUITests.swift; sourceTree = "<group>"; };
 		693B839F1C48D5640024F7EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		69CB8E3A1C5B2884007395B8 /* LoginPageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPageButton.swift; path = "Mobility Chicken/LoginPageButton.swift"; sourceTree = "<group>"; };
+		69CB8E3C1C5B53B2007395B8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		69CB8E401C5B5755007395B8 /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
+		69CB8E421C5B5C5C007395B8 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
+		69CB8E441C5B69A3007395B8 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		69CB8E461C5CACEE007395B8 /* NavViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavViewController.swift; sourceTree = "<group>"; };
+		69CB8E481C5CB1B2007395B8 /* SavedRoutinesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedRoutinesViewController.swift; sourceTree = "<group>"; };
+		69CB8E4B1C5D6EE1007395B8 /* settings-256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "settings-256.png"; path = "Assets.xcassets/settings.imageset/settings-256.png"; sourceTree = "<group>"; };
+		69CB8E4D1C5D7523007395B8 /* back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = back.png; path = ../../image_and_sound/back.png; sourceTree = "<group>"; };
+		69CB8E4F1C5D78DB007395B8 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		69CB8E511C5E0007007395B8 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +119,10 @@
 		693B837C1C48D5640024F7EC /* Mobility Chicken */ = {
 			isa = PBXGroup;
 			children = (
+				69CB8E4A1C5D6EC8007395B8 /* Images */,
+				69CB8E3F1C5B540B007395B8 /* Controller */,
+				69CB8E3E1C5B53E0007395B8 /* View */,
 				693B837D1C48D5640024F7EC /* AppDelegate.swift */,
-				693B837F1C48D5640024F7EC /* ViewController.swift */,
 				693B83811C48D5640024F7EC /* Main.storyboard */,
 				693B83841C48D5640024F7EC /* Assets.xcassets */,
 				693B83861C48D5640024F7EC /* LaunchScreen.storyboard */,
@@ -123,6 +147,40 @@
 				693B839F1C48D5640024F7EC /* Info.plist */,
 			);
 			path = "Mobility ChickenUITests";
+			sourceTree = "<group>";
+		};
+		69CB8E3E1C5B53E0007395B8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				69CB8E3A1C5B2884007395B8 /* LoginPageButton.swift */,
+				69CB8E401C5B5755007395B8 /* LoginTextField.swift */,
+			);
+			name = View;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		69CB8E3F1C5B540B007395B8 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				693B837F1C48D5640024F7EC /* LoginViewController.swift */,
+				69CB8E421C5B5C5C007395B8 /* SignUpViewController.swift */,
+				69CB8E3C1C5B53B2007395B8 /* HomeViewController.swift */,
+				69CB8E4F1C5D78DB007395B8 /* SettingsViewController.swift */,
+				69CB8E481C5CB1B2007395B8 /* SavedRoutinesViewController.swift */,
+				69CB8E461C5CACEE007395B8 /* NavViewController.swift */,
+				69CB8E441C5B69A3007395B8 /* SearchViewController.swift */,
+				69CB8E511C5E0007007395B8 /* ResultsViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		69CB8E4A1C5D6EC8007395B8 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				69CB8E4D1C5D7523007395B8 /* back.png */,
+				69CB8E4B1C5D6EE1007395B8 /* settings-256.png */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -230,7 +288,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				693B83881C48D5640024F7EC /* LaunchScreen.storyboard in Resources */,
+				69CB8E4E1C5D7523007395B8 /* back.png in Resources */,
 				693B83851C48D5640024F7EC /* Assets.xcassets in Resources */,
+				69CB8E4C1C5D6EE1007395B8 /* settings-256.png in Resources */,
 				693B83831C48D5640024F7EC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -256,8 +316,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				693B83801C48D5640024F7EC /* ViewController.swift in Sources */,
+				69CB8E521C5E0007007395B8 /* ResultsViewController.swift in Sources */,
+				69CB8E431C5B5C5C007395B8 /* SignUpViewController.swift in Sources */,
+				693B83801C48D5640024F7EC /* LoginViewController.swift in Sources */,
 				693B837E1C48D5640024F7EC /* AppDelegate.swift in Sources */,
+				69CB8E501C5D78DB007395B8 /* SettingsViewController.swift in Sources */,
+				69CB8E3B1C5B2884007395B8 /* LoginPageButton.swift in Sources */,
+				69CB8E491C5CB1B2007395B8 /* SavedRoutinesViewController.swift in Sources */,
+				69CB8E451C5B69A3007395B8 /* SearchViewController.swift in Sources */,
+				69CB8E471C5CACEE007395B8 /* NavViewController.swift in Sources */,
+				69CB8E3D1C5B53B2007395B8 /* HomeViewController.swift in Sources */,
+				69CB8E411C5B5755007395B8 /* LoginTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +553,7 @@
 				693B83A41C48D5640024F7EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		693B83A51C48D5640024F7EC /* Build configuration list for PBXNativeTarget "Mobility ChickenTests" */ = {
 			isa = XCConfigurationList;
@@ -492,6 +562,7 @@
 				693B83A71C48D5640024F7EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		693B83A81C48D5640024F7EC /* Build configuration list for PBXNativeTarget "Mobility ChickenUITests" */ = {
 			isa = XCConfigurationList;
@@ -500,6 +571,7 @@
 				693B83AA1C48D5640024F7EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

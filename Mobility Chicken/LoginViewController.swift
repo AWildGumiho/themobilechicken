@@ -1,44 +1,129 @@
 //
-//  ViewController.swift
+//  LoginViewController.swift
 //  Mobility Chicken
 //
 //  Created by Chelsea Green on 1/14/16.
 //  Copyright © 2016 Mobility Chicken. All rights reserved.
 //
 
-
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    var usernameTextField = UITextField(frame: CGRectMake(10, 80, (UIScreen.mainScreen().bounds.width)-20, 80))
-    var passwordTextField = UITextField(frame: CGRectMake(10, 80, (UIScreen.mainScreen().bounds.width)-20, 170))
-    var loginButton = UIButton(frame: CGRectMake(10, 80, (UIScreen.mainScreen().bounds.width)-20, 260))
-    var signupButton = UIButton(frame: CGRectMake(10, 80, (UIScreen.mainScreen().bounds.width)-20, 360))
-    var facebookButton = UIButton(frame: CGRectMake(10, 80, (UIScreen.mainScreen().bounds.width)-20, 460))
-    var forgotPasswordButton = UIButton(frame: CGRectMake(10, 80, (UIScreen.mainScreen().bounds.width)-20, 560))
+    var usernameTextField = LoginTextField(frame: CGRectMake(10, 300, (UIScreen.mainScreen().bounds.width)-20, 50))
+    var passwordTextField = LoginTextField(frame: CGRectMake(10, 360, (UIScreen.mainScreen().bounds.width)-20, 50))
+    var loginButton = LoginPageButton(frame: CGRectMake(10, 420, (UIScreen.mainScreen().bounds.width)-20, 50))
+    var signupButton = UIButton(frame: CGRectMake(10, 480, (UIScreen.mainScreen().bounds.width)-20, 40))
+    var facebookButton = LoginPageButton(frame: CGRectMake(10, (UIScreen.mainScreen().bounds.height)-100, (UIScreen.mainScreen().bounds.width)-20, 40))
+    var forgotPasswordButton = UIButton(frame: CGRectMake(10, (UIScreen.mainScreen().bounds.height)-50 , (UIScreen.mainScreen().bounds.width)-20, 40))
+    var welcomeText = UILabel(frame: CGRectMake(10, 100, (UIScreen.mainScreen().bounds.width)-20, 50))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        usernameTextField.backgroundColor = UIColor.blueColor()
+        let name=NSAttributedString(string: "Username", attributes:    [NSForegroundColorAttributeName : UIColor.grayColor().colorWithAlphaComponent(0.6)])
+        usernameTextField.attributedPlaceholder=name
+        usernameTextField.delegate = self
         self.view.addSubview(usernameTextField)
         
-        passwordTextField.backgroundColor = UIColor.greenColor()
+        let password=NSAttributedString(string: "Password", attributes:    [NSForegroundColorAttributeName : UIColor.grayColor().colorWithAlphaComponent(0.6)])
+        passwordTextField.attributedPlaceholder=password
+        passwordTextField.delegate = self
         self.view.addSubview(passwordTextField)
         
-        loginButton.backgroundColor = UIColor.brownColor()
+        loginButton.addTarget(self, action: "loginPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        loginButton.setTitle("Sign In", forState: .Normal)
         self.view.addSubview(loginButton)
         
-        signupButton.backgroundColor = UIColor.redColor()
+        signupButton.addTarget(self, action: "signupPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        signupButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        signupButton.setTitle("Create New Account", forState: .Normal)
         self.view.addSubview(signupButton)
         
-        facebookButton.backgroundColor = UIColor.orangeColor()
+        facebookButton.addTarget(self, action: "facebookPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        facebookButton.setTitle("Sign in with Facebook", forState: .Normal)
         self.view.addSubview(facebookButton)
         
-        forgotPasswordButton.backgroundColor = UIColor.grayColor()
+        forgotPasswordButton.addTarget(self, action: "forgotPasswordPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        forgotPasswordButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        forgotPasswordButton.setTitle("Forgot Password?", forState: .Normal)
         self.view.addSubview(forgotPasswordButton)
+        
+        welcomeText.textAlignment = NSTextAlignment.Center
+        welcomeText.text = "The Mobile Chicken"
+        welcomeText.font = UIFont(name: "HelveticaNeue-UltraLight", size: 40)
+        self.view.addSubview(welcomeText)
     }
     
+    
+    //MARK: Actions
+    func loginPressed() {
+        let hvc = HomeViewController()
+        self.presentViewController(hvc, animated: true, completion: nil)
+    }
+    
+    func signupPressed() {
+        let svc = SignUpViewController()
+        self.presentViewController(svc, animated: true, completion: nil)
+    }
+    
+    func facebookPressed() {
+        
+    }
+
+    func forgotPasswordPressed() {
+        
+    }
+    
+    //MARK: Text field delegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

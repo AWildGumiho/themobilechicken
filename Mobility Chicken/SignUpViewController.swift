@@ -8,28 +8,50 @@
 
 import UIKit
 
-class SignUpViewController: UIViewController {
+class SignUpViewController: NavViewController, UITextFieldDelegate {
+    
+    var emailTextField = LoginTextField(frame: CGRectMake(10, 240, (UIScreen.mainScreen().bounds.width)-20, 50))
+    var usernameTextField = LoginTextField(frame: CGRectMake(10, 300, (UIScreen.mainScreen().bounds.width)-20, 50))
+    var passwordTextField = LoginTextField(frame: CGRectMake(10, 360, (UIScreen.mainScreen().bounds.width)-20, 50))
+    var createAccountButton = LoginPageButton(frame: CGRectMake(10, 420, (UIScreen.mainScreen().bounds.width)-20, 50))
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        view.backgroundColor = UIColor.whiteColor()
+        
+        toolBar.hidden = true
+        
+        let email=NSAttributedString(string: "Email", attributes:    [NSForegroundColorAttributeName : UIColor.grayColor().colorWithAlphaComponent(0.6)])
+        emailTextField.attributedPlaceholder=email
+        emailTextField.delegate = self
+        self.view.addSubview(emailTextField)
+        
+        let username=NSAttributedString(string: "Username", attributes:    [NSForegroundColorAttributeName : UIColor.grayColor().colorWithAlphaComponent(0.6)])
+        usernameTextField.attributedPlaceholder=username
+        usernameTextField.delegate = self
+        self.view.addSubview(usernameTextField)
+        
+        let password=NSAttributedString(string: "Password", attributes:    [NSForegroundColorAttributeName : UIColor.grayColor().colorWithAlphaComponent(0.6)])
+        passwordTextField.attributedPlaceholder=password
+        passwordTextField.delegate = self
+        self.view.addSubview(passwordTextField)
+        
+        createAccountButton.addTarget(self, action: "submitPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        createAccountButton.setTitle("Submit", forState: .Normal)
+        self.view.addSubview(createAccountButton)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: Actions
+    func submitPressed() {
+        //TODO: Present an alert. Failure "ok" presents SVC again, Success "ok" dismisses SVC (shows LVC)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
-    */
+    
+    //MARK: Text field delegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
 
 }
