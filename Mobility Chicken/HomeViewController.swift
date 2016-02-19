@@ -45,6 +45,8 @@ class HomeViewController: NavViewController {
         topText.text = "Welcome Mobile Chicken"
         topText.font = UIFont(name: "HelveticaNeue-UltraLight", size: 30)
         self.view.addSubview(topText)
+        
+        self.title = "item1"
     }
     
     func searchButtonPressed() {
@@ -73,4 +75,3 @@ class HomeViewController: NavViewController {
     
     
 }
-

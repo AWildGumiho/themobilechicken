@@ -20,8 +20,6 @@ class SettingsViewController: NavViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        toolBar.hidden = true
-        
         logoutButton.addTarget(self, action: "logoutPressed", forControlEvents: UIControlEvents.TouchUpInside)
         logoutButton.setTitle("Sign Out", forState: .Normal)
         self.view.addSubview(logoutButton)
@@ -66,16 +64,6 @@ class SettingsViewController: NavViewController {
     }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+  
 
 }

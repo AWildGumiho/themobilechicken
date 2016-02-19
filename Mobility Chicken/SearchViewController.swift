@@ -18,6 +18,8 @@ class SearchViewController: NavViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        backButton.hidden = true
 
         imageButton.addTarget(self, action: "imagePressed", forControlEvents: UIControlEvents.TouchUpInside)
         imageButton.setTitle("Basic", forState: .Normal)
@@ -34,6 +36,7 @@ class SearchViewController: NavViewController {
         allButton.addTarget(self, action: "allPressed", forControlEvents: UIControlEvents.TouchUpInside)
         allButton.setTitle("All", forState: .Normal)
         self.view.addSubview(allButton)
+        
     }
     
     func imagePressed() {
@@ -51,13 +54,7 @@ class SearchViewController: NavViewController {
     func allPressed() {
         
     }
-    
-    
-    
-    
-    
-    
-    
+
     
 
 }

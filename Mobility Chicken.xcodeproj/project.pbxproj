@@ -152,8 +152,8 @@
 		69CB8E3E1C5B53E0007395B8 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				69CB8E3A1C5B2884007395B8 /* LoginPageButton.swift */,
 				69CB8E401C5B5755007395B8 /* LoginTextField.swift */,
+				69CB8E3A1C5B2884007395B8 /* LoginPageButton.swift */,
 			);
 			name = View;
 			path = ..;
@@ -162,14 +162,14 @@
 		69CB8E3F1C5B540B007395B8 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				693B837F1C48D5640024F7EC /* LoginViewController.swift */,
-				69CB8E421C5B5C5C007395B8 /* SignUpViewController.swift */,
 				69CB8E3C1C5B53B2007395B8 /* HomeViewController.swift */,
-				69CB8E4F1C5D78DB007395B8 /* SettingsViewController.swift */,
-				69CB8E481C5CB1B2007395B8 /* SavedRoutinesViewController.swift */,
+				693B837F1C48D5640024F7EC /* LoginViewController.swift */,
 				69CB8E461C5CACEE007395B8 /* NavViewController.swift */,
-				69CB8E441C5B69A3007395B8 /* SearchViewController.swift */,
 				69CB8E511C5E0007007395B8 /* ResultsViewController.swift */,
+				69CB8E481C5CB1B2007395B8 /* SavedRoutinesViewController.swift */,
+				69CB8E4F1C5D78DB007395B8 /* SettingsViewController.swift */,
+				69CB8E441C5B69A3007395B8 /* SearchViewController.swift */,
+				69CB8E421C5B5C5C007395B8 /* SignUpViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";

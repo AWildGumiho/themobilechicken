@@ -19,8 +19,6 @@ class SignUpViewController: NavViewController, UITextFieldDelegate {
         super.viewDidLoad()
         view.backgroundColor = UIColor.whiteColor()
         
-        toolBar.hidden = true
-        
         let email=NSAttributedString(string: "Email", attributes:    [NSForegroundColorAttributeName : UIColor.grayColor().colorWithAlphaComponent(0.6)])
         emailTextField.attributedPlaceholder=email
         emailTextField.delegate = self
@@ -52,6 +50,4 @@ class SignUpViewController: NavViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    
-
 }

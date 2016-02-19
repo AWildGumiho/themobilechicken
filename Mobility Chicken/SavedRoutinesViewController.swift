@@ -13,7 +13,7 @@ class SavedRoutinesViewController: NavViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        backButton.hidden = true
     }
 
 }
