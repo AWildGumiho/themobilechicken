@@ -15,11 +15,16 @@ class SearchViewController: NavViewController {
     var textButton = LoginPageButton(frame: CGRectMake((UIScreen.mainScreen().bounds.width)-195, 200, 120, 120))
     var exerciseButton = LoginPageButton(frame: CGRectMake(75, 340, 120, 120))
     var allButton = LoginPageButton(frame: CGRectMake((UIScreen.mainScreen().bounds.width)-195, 340, 120, 120))
+    
+    var searchButton = LoginPageButton(frame: CGRectMake(10, (UIScreen.mainScreen().bounds.height)-100 , (UIScreen.mainScreen().bounds.width)-20, 40))
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         backButton.hidden = true
+        backButton.removeTarget(self, action: "cancelClicked", forControlEvents: UIControlEvents.TouchUpInside)
+        backButton.addTarget(self, action: "backPressed", forControlEvents: UIControlEvents.TouchUpInside)
 
         imageButton.addTarget(self, action: "imagePressed", forControlEvents: UIControlEvents.TouchUpInside)
         imageButton.setTitle("Basic", forState: .Normal)
@@ -36,25 +41,60 @@ class SearchViewController: NavViewController {
         allButton.addTarget(self, action: "allPressed", forControlEvents: UIControlEvents.TouchUpInside)
         allButton.setTitle("All", forState: .Normal)
         self.view.addSubview(allButton)
-        
     }
     
-    func imagePressed() {
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        searchButton.addTarget(self, action: "searchPressed", forControlEvents: UIControlEvents.TouchUpInside)
+        searchButton.setTitle("Search", forState: .Normal)
+        self.view.addSubview(searchButton)
+    }
     
+    
+    //MARK: Actions
+    func imagePressed() {
+        anySearchKeyPressed()
     }
     
     func textPressed() {
+        anySearchKeyPressed()
         
     }
     
     func exercisePressed() {
+        anySearchKeyPressed()
         
     }
     
     func allPressed() {
+        anySearchKeyPressed()
         
     }
-
     
+    func backPressed() {
+        imageButton.hidden = false
+        textButton.hidden = false
+        exerciseButton.hidden = false
+        allButton.hidden = false
+        backButton.hidden = true
+        searchButton.hidden = true
+    }
+    
+    func searchPressed() {
+        presentViewController(ResultsViewController(), animated: true, completion: nil)
+        searchButton.hidden = false
+    }
+    
+    //MARK: helper functions 
+    func anySearchKeyPressed() {
+        imageButton.hidden = true
+        textButton.hidden = true
+        exerciseButton.hidden = true
+        allButton.hidden = true
+        backButton.hidden = false
+        searchButton.hidden = false
+        
+    }
 
 }

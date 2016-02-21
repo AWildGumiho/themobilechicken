@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NavViewController: UIViewController {
+class NavViewController: UINavigationController {
  
     var navBar = UINavigationBar(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 65))
     var backButton: UIButton = UIButton(type: UIButtonType.Custom)
@@ -29,12 +29,10 @@ class NavViewController: UIViewController {
         navBar.tintColor = UIColor.blackColor()
         navBar.items = [navItem]
         self.view.addSubview(navBar)
-
     }
     
     //MARK: Actions
     func cancelClicked() {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-
 }

@@ -15,6 +15,7 @@
 		693B83931C48D5640024F7EC /* Mobility_ChickenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B83921C48D5640024F7EC /* Mobility_ChickenTests.swift */; };
 		693B839E1C48D5640024F7EC /* Mobility_ChickenUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 693B839D1C48D5640024F7EC /* Mobility_ChickenUITests.swift */; };
 		698E646D1C79521500B74439 /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698E646C1C79521500B74439 /* TabBarController.swift */; };
+		698E646F1C79589200B74439 /* NavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698E646E1C79589200B74439 /* NavigationViewController.swift */; };
 		69CB8E3B1C5B2884007395B8 /* LoginPageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB8E3A1C5B2884007395B8 /* LoginPageButton.swift */; };
 		69CB8E3D1C5B53B2007395B8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB8E3C1C5B53B2007395B8 /* HomeViewController.swift */; };
 		69CB8E411C5B5755007395B8 /* LoginTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69CB8E401C5B5755007395B8 /* LoginTextField.swift */; };
@@ -60,6 +61,7 @@
 		693B839D1C48D5640024F7EC /* Mobility_ChickenUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mobility_ChickenUITests.swift; sourceTree = "<group>"; };
 		693B839F1C48D5640024F7EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		698E646C1C79521500B74439 /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
+		698E646E1C79589200B74439 /* NavigationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationViewController.swift; sourceTree = "<group>"; };
 		69CB8E3A1C5B2884007395B8 /* LoginPageButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginPageButton.swift; path = "Mobility Chicken/LoginPageButton.swift"; sourceTree = "<group>"; };
 		69CB8E3C1C5B53B2007395B8 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		69CB8E401C5B5755007395B8 /* LoginTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginTextField.swift; sourceTree = "<group>"; };
@@ -122,7 +124,7 @@
 			isa = PBXGroup;
 			children = (
 				69CB8E4A1C5D6EC8007395B8 /* Images */,
-				69CB8E3F1C5B540B007395B8 /* Controller */,
+				69CB8E3F1C5B540B007395B8 /* Controllers */,
 				69CB8E3E1C5B53E0007395B8 /* View */,
 				693B837D1C48D5640024F7EC /* AppDelegate.swift */,
 				693B83811C48D5640024F7EC /* Main.storyboard */,
@@ -161,20 +163,21 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
-		69CB8E3F1C5B540B007395B8 /* Controller */ = {
+		69CB8E3F1C5B540B007395B8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				69CB8E3C1C5B53B2007395B8 /* HomeViewController.swift */,
+				698E646E1C79589200B74439 /* NavigationViewController.swift */,
 				693B837F1C48D5640024F7EC /* LoginViewController.swift */,
+				69CB8E421C5B5C5C007395B8 /* SignUpViewController.swift */,
 				698E646C1C79521500B74439 /* TabBarController.swift */,
+				69CB8E3C1C5B53B2007395B8 /* HomeViewController.swift */,
+				69CB8E481C5CB1B2007395B8 /* SavedRoutinesViewController.swift */,
+				69CB8E441C5B69A3007395B8 /* SearchViewController.swift */,
 				69CB8E461C5CACEE007395B8 /* NavViewController.swift */,
 				69CB8E511C5E0007007395B8 /* ResultsViewController.swift */,
-				69CB8E481C5CB1B2007395B8 /* SavedRoutinesViewController.swift */,
 				69CB8E4F1C5D78DB007395B8 /* SettingsViewController.swift */,
-				69CB8E441C5B69A3007395B8 /* SearchViewController.swift */,
-				69CB8E421C5B5C5C007395B8 /* SignUpViewController.swift */,
 			);
-			name = Controller;
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		69CB8E4A1C5D6EC8007395B8 /* Images */ = {
@@ -320,6 +323,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				69CB8E521C5E0007007395B8 /* ResultsViewController.swift in Sources */,
+				698E646F1C79589200B74439 /* NavigationViewController.swift in Sources */,
 				69CB8E431C5B5C5C007395B8 /* SignUpViewController.swift in Sources */,
 				693B83801C48D5640024F7EC /* LoginViewController.swift in Sources */,
 				693B837E1C48D5640024F7EC /* AppDelegate.swift in Sources */,
