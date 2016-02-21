@@ -12,35 +12,13 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-    
-    var tabViewController1 : HomeViewController?
-    var tabViewController2 : SavedRoutinesViewController?
-    var tabViewController3 : SearchViewController?
-
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        window = UIWindow(frame: UIScreen.mainScreen().bounds)
         //setting the initial screen bounds of the view
-        self.tabViewController1 = HomeViewController()
-        self.tabViewController2 = SavedRoutinesViewController()
-        self.tabViewController3 = SearchViewController()
-        //creating object of TabViewController[1,2,3] class
-        var tabBarController = UITabBarController()
-        //creating object of UITabBarController class
-        tabBarController.viewControllers = [tabViewController1! , tabViewController2! , tabViewController3!]
-        //adding all three views to the TabBarView
-        var item1 = UITabBarItem(title: "1st", image: nil, tag: 0)
-        var item2 = UITabBarItem(title: "2nd", image: nil, tag: 1)
-        var item3 = UITabBarItem(title: "3rd", image: nil, tag: 2)
-        //defining the items of the TabBar corresponding to three views
-        tabViewController1?.tabBarItem = item1
-        tabViewController2?.tabBarItem = item2
-        tabViewController3?.tabBarItem = item3
-        //setting TabBarItems corresponding to each view in TabBarController
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
         
-        self.window?.rootViewController = tabBarController
-        //setting the initial VieController as tabBarController
+        self.window?.rootViewController = LoginViewController()
         
         window?.makeKeyAndVisible()
       

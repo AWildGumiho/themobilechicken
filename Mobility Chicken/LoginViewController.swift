@@ -58,8 +58,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     //MARK: Actions
     func loginPressed() {
-        let hvc = HomeViewController()
-        self.presentViewController(hvc, animated: true, completion: nil)
+        let tabvc = TabBarController()
+        self.presentViewController(tabvc, animated: true, completion: nil )
     }
     
     func signupPressed() {

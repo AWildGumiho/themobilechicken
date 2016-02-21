@@ -41,6 +41,20 @@
             </objects>
             <point key="canvasLocation" x="-691" y="317"/>
         </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="hKA-Qz-bTO">
+            <objects>
+                <tabBarController id="SO4-ho-e9V" customClass="TabBarController" customModule="Mobility_Chicken" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="rEP-xp-zlh">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="c2G-u9-d9f" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="49" y="-387"/>
+        </scene>
         <!--Home View Controller-->
         <scene sceneID="EtP-9P-e04">
             <objects>
@@ -57,7 +71,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XY8-d9-R5c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-19" y="-394"/>
+            <point key="canvasLocation" x="373" y="382"/>
         </scene>
     </scenes>
 </document>
