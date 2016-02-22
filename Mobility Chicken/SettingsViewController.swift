@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SettingsViewController: NavViewController {
+class SettingsViewController: BaseViewController {
     
     var logoutButton = LoginPageButton(frame: CGRectMake(10, 100, (UIScreen.mainScreen().bounds.width)-20, 50))
     var accountLabel = UILabel(frame: CGRectMake(10, 300, (UIScreen.mainScreen().bounds.width)-20, 50))
@@ -52,7 +52,13 @@ class SettingsViewController: NavViewController {
         }
     
     func logoutPressed() {
-        //Cancels sessions and dismisses 2 VCs
+        // unauth() - the logout method for the current user.
+        DataService.dataService.CURRENT_USER_REF.unauth()
+        // Remove the user's uid from storage.
+        NSUserDefaults.standardUserDefaults().setValue(nil, forKey: "uid")
+
+        // Head back to Login
+        UIApplication.sharedApplication().keyWindow?.rootViewController = LoginViewController()
     }
     
     func changePasswordPressed() {
@@ -62,8 +68,5 @@ class SettingsViewController: NavViewController {
     func cancelAccountPressed() {
         
     }
-    
-    
-  
 
 }

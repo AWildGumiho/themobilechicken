@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: BaseViewController {
     
     var emailTextField = LoginTextField(frame: CGRectMake(10, 300, (UIScreen.mainScreen().bounds.width)-20, 50))
     var passwordTextField = LoginTextField(frame: CGRectMake(10, 360, (UIScreen.mainScreen().bounds.width)-20, 50))
@@ -22,13 +22,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        navBar.hidden = true
+        
         let name=NSAttributedString(string: "Email", attributes:    [NSForegroundColorAttributeName : UIColor.grayColor().colorWithAlphaComponent(0.6)])
         emailTextField.attributedPlaceholder=name
         emailTextField.delegate = self
-        self.view.addSubview(usernameTextField)
+        self.view.addSubview(emailTextField)
         
         let password=NSAttributedString(string: "Password", attributes:    [NSForegroundColorAttributeName : UIColor.grayColor().colorWithAlphaComponent(0.6)])
         passwordTextField.attributedPlaceholder=password
+        passwordTextField.secureTextEntry = true
         passwordTextField.delegate = self
         self.view.addSubview(passwordTextField)
         
@@ -70,7 +73,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let password = passwordTextField.text
         
         if email != "" && password != "" {
-            //Login wiht the Firebase authUser method
+            //Login with the Firebase authUser method
             DataService.dataService.BASE_REF.authUser(email, password: password, withCompletionBlock: { error, authData in
                 
                 if error != nil {
@@ -113,11 +116,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         alert.addAction(action)
         presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    //MARK: Text field delegate
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }

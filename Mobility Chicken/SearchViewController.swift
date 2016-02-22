@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SearchViewController: NavViewController {
+class SearchViewController: BaseViewController {
     
     //var searchLabel = UILabel
     var imageButton = LoginPageButton(frame: CGRectMake(75, 200, 120, 120))

@@ -1,5 +1,5 @@
 //
-//  NavViewController.swift
+//  BaseViewController.swift
 //  Mobility Chicken
 //
 //  Created by Chelsea Green on 1/30/16.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NavViewController: UINavigationController {
+class BaseViewController: UIViewController, UITextFieldDelegate {
  
     var navBar = UINavigationBar(frame: CGRectMake(0, 0, UIScreen.mainScreen().bounds.width, 65))
     var backButton: UIButton = UIButton(type: UIButtonType.Custom)
@@ -34,5 +34,11 @@ class NavViewController: UINavigationController {
     //MARK: Actions
     func cancelClicked() {
         self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    //MARK: Text field delegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 }

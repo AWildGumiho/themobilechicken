@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-class SignUpViewController: NavViewController, UITextFieldDelegate {
+class SignUpViewController: BaseViewController {
     
     var emailTextField = LoginTextField(frame: CGRectMake(10, 240, (UIScreen.mainScreen().bounds.width)-20, 50))
     var usernameTextField = LoginTextField(frame: CGRectMake(10, 300, (UIScreen.mainScreen().bounds.width)-20, 50))
@@ -32,6 +32,7 @@ class SignUpViewController: NavViewController, UITextFieldDelegate {
         
         let password=NSAttributedString(string: "Password", attributes:    [NSForegroundColorAttributeName : UIColor.grayColor().colorWithAlphaComponent(0.6)])
         passwordTextField.attributedPlaceholder=password
+        passwordTextField.secureTextEntry = true
         passwordTextField.delegate = self
         self.view.addSubview(passwordTextField)
         
@@ -77,7 +78,6 @@ class SignUpViewController: NavViewController, UITextFieldDelegate {
         } else {
             signupErrorAlert("Oops!", message: "Don't forget to enter your email, password, and a username.")
         }
-        
     }
     
     func signupErrorAlert(title: String, message: String) {
@@ -88,11 +88,5 @@ class SignUpViewController: NavViewController, UITextFieldDelegate {
         let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
         alert.addAction(action)
         presentViewController(alert, animated: true, completion: nil)
-    }
-    
-    //MARK: Text field delegate
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
     }
 }

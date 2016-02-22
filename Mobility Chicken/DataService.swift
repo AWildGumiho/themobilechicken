@@ -14,7 +14,7 @@ class DataService {
     
     private var _BASE_REF = Firebase(url: "\(BASE_URL)")
     private var _USER_REF = Firebase(url: "\(BASE_URL)/users")
-    private var _JOKE_REF = Firebase(url: "\(BASE_URL)/exercises")
+    private var _EXERCISE_REF = Firebase(url: "\(BASE_URL)/exercises")
     
     var BASE_REF: Firebase {
         return _BASE_REF

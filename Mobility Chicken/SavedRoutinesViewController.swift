@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SavedRoutinesViewController: NavViewController {
+class SavedRoutinesViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeViewController: NavViewController {
+class HomeViewController: BaseViewController {
     
     var searchButton = LoginPageButton(frame: CGRectMake(100, 340, (UIScreen.mainScreen().bounds.width)-200, 150))
     var savedRoutinesButton = LoginPageButton(frame: CGRectMake(100, 510, (UIScreen.mainScreen().bounds.width)-200, 150))
@@ -71,7 +71,5 @@ class HomeViewController: NavViewController {
     
     func contactPressed() {
         
-    }
-    
-    
+    }   
 }

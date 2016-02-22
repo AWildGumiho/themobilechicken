@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResultsViewController: NavViewController {
+class ResultsViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
