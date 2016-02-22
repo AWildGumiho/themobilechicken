@@ -1,0 +1,6 @@
+framework module Pods_Mobility_Chicken {
+  umbrella header "Pods-Mobility Chicken-umbrella.h"
+
+  export *
+  module * { export * }
+}

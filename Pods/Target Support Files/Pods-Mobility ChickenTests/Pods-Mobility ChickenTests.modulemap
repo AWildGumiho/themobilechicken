@@ -1,0 +1,6 @@
+framework module Pods_Mobility_ChickenTests {
+  umbrella header "Pods-Mobility ChickenTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    var usernameTextField = LoginTextField(frame: CGRectMake(10, 300, (UIScreen.mainScreen().bounds.width)-20, 50))
+    var emailTextField = LoginTextField(frame: CGRectMake(10, 300, (UIScreen.mainScreen().bounds.width)-20, 50))
     var passwordTextField = LoginTextField(frame: CGRectMake(10, 360, (UIScreen.mainScreen().bounds.width)-20, 50))
     var loginButton = LoginPageButton(frame: CGRectMake(10, 420, (UIScreen.mainScreen().bounds.width)-20, 50))
     var signupButton = UIButton(frame: CGRectMake(10, 480, (UIScreen.mainScreen().bounds.width)-20, 40))
@@ -21,9 +22,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let name=NSAttributedString(string: "Username", attributes:    [NSForegroundColorAttributeName : UIColor.grayColor().colorWithAlphaComponent(0.6)])
-        usernameTextField.attributedPlaceholder=name
-        usernameTextField.delegate = self
+        let name=NSAttributedString(string: "Email", attributes:    [NSForegroundColorAttributeName : UIColor.grayColor().colorWithAlphaComponent(0.6)])
+        emailTextField.attributedPlaceholder=name
+        emailTextField.delegate = self
         self.view.addSubview(usernameTextField)
         
         let password=NSAttributedString(string: "Password", attributes:    [NSForegroundColorAttributeName : UIColor.grayColor().colorWithAlphaComponent(0.6)])
@@ -55,17 +56,45 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.addSubview(welcomeText)
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        //If the uid is stored, the user is logged in already.
+        if NSUserDefaults.standardUserDefaults().valueForKey("uid") != nil && DataService.dataService.CURRENT_USER_REF.authData != nil {
+            self.presentViewController(TabBarController(), animated: true, completion: nil)
+        }
+    }
     
     //MARK: Actions
     func loginPressed() {
-        let tabvc = TabBarController()
-        self.presentViewController(tabvc, animated: true, completion: nil )
-
+        let email = emailTextField.text
+        let password = passwordTextField.text
+        
+        if email != "" && password != "" {
+            //Login wiht the Firebase authUser method
+            DataService.dataService.BASE_REF.authUser(email, password: password, withCompletionBlock: { error, authData in
+                
+                if error != nil {
+                    print(error)
+                    self.loginErrorAlert("Oops!", message: "Check your username and password.")
+                } else {
+                    
+                    //Be sure the correct uid is stored.
+                    NSUserDefaults.standardUserDefaults().setValue(authData.uid, forKey: "uid")
+                    
+                    //Enter the app
+                    self.presentViewController(TabBarController(), animated: true, completion: nil)
+                }
+            })
+            
+        } else {
+            
+            // There was a problem
+            loginErrorAlert("Oops!", message: "Don't forget to enter your email and password.")
+        }
     }
     
     func signupPressed() {
-        let svc = SignUpViewController()
-        self.presentViewController(svc, animated: true, completion: nil)
+        self.presentViewController(SignUpViewController(), animated: true, completion: nil)
     }
     
     func facebookPressed() {
@@ -76,11 +105,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
     }
     
+    func loginErrorAlert(title: String, message: String) {
+        
+        // Called upon login error to let the user know login didn't work.
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        let action = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        alert.addAction(action)
+        presentViewController(alert, animated: true, completion: nil)
+    }
+    
     //MARK: Text field delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-
-
 }
